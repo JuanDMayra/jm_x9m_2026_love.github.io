@@ -1,80 +1,93 @@
+r'''setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+document.getElementById("login").style.display="flex";
+},2500);
+
 function checkPassword(){
-
-let answer =
-document.getElementById("password")
-.value
-.toLowerCase()
-.trim();
-
-if(answer === "mi todo"){
-
-document.getElementById("login")
-.style.display="none";
-
-document.getElementById("content")
-.style.display="block";
-
+const v=document.getElementById("password").value.trim().toLowerCase();
+if(v==="mi todo"){
+document.getElementById("login").style.display="none";
+document.getElementById("content").style.display="block";
+startTyping();
 }else{
-
-document.getElementById("error")
-.innerText="Inténtalo otra vez ❤️";
-
+document.getElementById("error").innerText="Inténtalo otra vez ❤️";
 }
 }
 
-function scrollToStory(){
-
-window.scrollTo({
-top:500,
-behavior:"smooth"
-});
-
-}
-
-const startDate =
-new Date("2025-09-09T00:00:00");
+const startDate=new Date("2025-09-09T00:00:00");
 
 function updateCounter(){
+const now=new Date();
+const diff=now-startDate;
+const d=Math.floor(diff/86400000);
+const h=Math.floor(diff/3600000)%24;
+const m=Math.floor(diff/60000)%60;
+const s=Math.floor(diff/1000)%60;
 
-const now = new Date();
-
-const diff =
-now - startDate;
-
-const days =
-Math.floor(diff/(1000*60*60*24));
-
-const hours =
-Math.floor((diff/(1000*60*60))%24);
-
-const minutes =
-Math.floor((diff/(1000*60))%60);
-
-const seconds =
-Math.floor((diff/1000)%60);
-
-document.getElementById("counter")
-.innerHTML =
-`${days} días<br>
-${hours} horas<br>
-${minutes} minutos<br>
-${seconds} segundos`;
-
+document.getElementById("counter").innerHTML=`
+<div class="box"><h2>${d}</h2><small>Días</small></div>
+<div class="box"><h2>${h}</h2><small>Horas</small></div>
+<div class="box"><h2>${m}</h2><small>Minutos</small></div>
+<div class="box"><h2>${s}</h2><small>Segundos</small></div>`;
 }
-
 setInterval(updateCounter,1000);
-
 updateCounter();
 
-function showFinalMessage(){
+const letter=`Mi amor,
 
-document.getElementById("finalMessage")
-.innerHTML=`
-❤️ Gracias por estos 9 meses ❤️
-<br><br>
-Eres una de las mejores decisiones de mi vida.
-<br><br>
-Te amo Mayra Michelle.
-`;
+Desde el instante en que te vi, algo cambió dentro de mí.
 
+Lo primero que me enamoró fue tu personalidad. Después descubrí tu inteligencia, tu fortaleza y todo lo maravilloso que eres.
+
+Mi recuerdo favorito siempre será el día en que te pedí que fueras mi enamorada. Ese momento se quedó para siempre en mi corazón.
+
+Admiro muchas cosas de ti, pero sobre todo la fuerza con la que enfrentas la vida.
+
+Mi sueño es construir una familia contigo, cumplir nuestras metas y conseguir todo aquello que soñamos, pero siempre juntos.
+
+Gracias por estos 9 meses.
+
+Te amo infinitamente.
+
+Juan Camilo ❤️`;
+
+function startTyping(){
+let i=0;
+const el=document.getElementById("typedText");
+const t=setInterval(()=>{
+el.textContent+=letter.charAt(i);
+i++;
+if(i>=letter.length) clearInterval(t);
+},35);
 }
+
+function showFinal(){
+document.getElementById("finalMessage").innerHTML=`
+<h2>❤️ Gracias por estos 9 meses ❤️</h2>
+<p>Volvería a elegirte una y otra vez.</p>
+<p>Te amo Mayra Michelle.</p>`;
+}
+
+setInterval(()=>{
+const h=document.createElement("div");
+h.className="heart-float";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),8000);
+},1000);
+
+document.getElementById("musicBtn").onclick=()=>{
+window.open("https://www.youtube.com/results?search_query=Cinnamon+Girl","_blank");
+};
+'''
+
+(base / "index.html").write_text(index_html, encoding="utf-8")
+(base / "style.css").write_text(style_css, encoding="utf-8")
+(base / "script.js").write_text(script_js, encoding="utf-8")
+
+print({
+    "index": str(base / "index.html"),
+    "style": str(base / "style.css"),
+    "script": str(base / "script.js"),
+})
