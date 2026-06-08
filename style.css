@@ -1,91 +1,22 @@
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#fff5f7;
-color:#333;
-text-align:center;
-}
-
-#content{
-display:none;
-}
-
-.card{
-margin:100px auto;
-width:90%;
-max-width:400px;
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 0 20px rgba(0,0,0,.1);
-}
-
-input{
-width:80%;
-padding:10px;
-margin:10px;
-border-radius:10px;
-border:1px solid #ccc;
-}
-
-button{
-padding:12px 25px;
-border:none;
-border-radius:30px;
-background:#ff4d6d;
-color:white;
-font-size:16px;
-cursor:pointer;
-}
-
-header{
-padding:50px 20px;
-}
-
-section{
-padding:40px 20px;
-}
-
-.thread{
-font-size:28px;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-50%{
-transform:scale(1.05);
-}
-}
-
-.photos{
-display:flex;
-overflow-x:auto;
-gap:15px;
-padding:20px;
-}
-
-.photos img{
-height:350px;
-border-radius:20px;
-}
-
-.letter{
-max-width:800px;
-margin:auto;
-line-height:1.8;
-}
-
-#counter{
-font-size:24px;
-font-weight:bold;
-}
-
-.final{
-padding-bottom:100px;
-}
-
-#finalMessage{
-margin-top:30px;
-font-size:24px;
-color:#ff4d6d;
-}
+margin:0;background:linear-gradient(135deg,#fff7f8,#f8eef6);
+font-family:Segoe UI,sans-serif;color:#333;text-align:center;overflow-x:hidden}
+#loader,.center-screen{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+#login{display:none}
+#content{display:none}
+.glass{background:rgba(255,255,255,.7);padding:30px;border-radius:20px;backdrop-filter:blur(10px)}
+input{padding:12px;border-radius:10px;border:1px solid #ddd;width:250px}
+button{padding:12px 22px;border:none;border-radius:30px;background:#e85d75;color:white;cursor:pointer}
+header{padding:80px 20px}
+#counter{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+.box{background:white;padding:15px;border-radius:15px;min-width:90px;box-shadow:0 3px 10px rgba(0,0,0,.08)}
+.thread-container{display:flex;justify-content:center;align-items:center;gap:10px}
+.thread{height:4px;width:120px;background:#d62839;animation:grow 3s infinite}
+@keyframes grow{50%{width:160px}}
+.gallery{display:flex;overflow-x:auto;gap:15px;padding:20px}
+.gallery img{height:350px;border-radius:20px}
+section{padding:40px 20px}
+.letter{max-width:800px;margin:auto;line-height:1.8}
+#musicBtn{position:fixed;right:15px;bottom:15px}
+.heart-float{position:fixed;bottom:-20px;animation:float 8s linear forwards}
+@keyframes float{to{transform:translateY(-110vh);opacity:0}}

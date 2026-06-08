@@ -4,145 +4,82 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Juan Camilo ❤️ Mayra Michelle</title>
-
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div id="login">
-    <div class="card">
-        <h1>❤️ Una sorpresa para ti ❤️</h1>
+<div id="loader">
+  <h1>❤️ Juan Camilo & Mayra Michelle ❤️</h1>
+  <p>09 • 09 • 2025</p>
+  <p>Una historia escrita por el destino...</p>
+</div>
 
-        <p>¿Qué soy para ti?</p>
-
-        <input type="text" id="password" placeholder="Tu respuesta">
-
-        <button onclick="checkPassword()">
-            Entrar
-        </button>
-
-        <p id="error"></p>
-    </div>
+<div id="login" class="center-screen">
+  <div class="glass">
+    <h2>¿Qué soy para ti?</h2>
+    <input id="password" placeholder="Tu respuesta">
+    <button onclick="checkPassword()">Entrar ❤️</button>
+    <p id="error"></p>
+  </div>
 </div>
 
 <div id="content">
-
 <header>
-    <h1>Juan Camilo ❤️ Mayra Michelle</h1>
-
-    <p>
-        Una historia que comenzó el
-        09/09/2025
-    </p>
-
-    <button onclick="scrollToStory()">
-        ❤️ Descúbrelo ❤️
-    </button>
+<h1>Juan Camilo ❤️ Mayra Michelle</h1>
+<p>Nuestros primeros 9 meses juntos</p>
+<button onclick="document.getElementById('timeline').scrollIntoView({behavior:'smooth'})">❤️ Descúbrelo ❤️</button>
 </header>
 
 <section id="counterSection">
-
-<h2>Nuestro tiempo juntos</h2>
-
+<h2>Tiempo juntos</h2>
 <div id="counter"></div>
-
 </section>
 
-<section class="red-thread">
-
-<h2>El Hilo Rojo</h2>
-
-<div class="thread">
-    Juan Camilo ───── ❤️ ───── Mayra
+<section>
+<h2>🧵 El Hilo Rojo</h2>
+<div class="thread-container">
+<div class="name">Juan Camilo</div>
+<div class="thread"></div>
+<div class="heart">❤️</div>
+<div class="thread"></div>
+<div class="name">Mayra</div>
 </div>
-
-<p>
-Dicen que existe un hilo rojo invisible que conecta a las personas destinadas a encontrarse.
-</p>
-
 </section>
 
 <section id="gallery">
-
-<h2>Nuestros Recuerdos</h2>
-
-<div class="photos">
-
+<h2>📸 Nuestros recuerdos</h2>
+<div class="gallery">
 <img src="fotos/foto1.jpg">
 <img src="fotos/foto2.jpg">
 <img src="fotos/foto3.jpg">
 <img src="fotos/foto4.jpg">
 <img src="fotos/foto5.jpg">
-
 </div>
+</section>
 
+<section id="timeline">
+<h2>🌟 Nuestra historia</h2>
+<ul>
+<li>09/09/2025 - Comenzó nuestra historia</li>
+<li>Me enamoré de ti al instante</li>
+<li>El día que te pedí ser mi enamorada ❤️</li>
+<li>9 meses construyendo recuerdos</li>
+</ul>
 </section>
 
 <section class="letter">
-
-<h2>Para Ti ❤️</h2>
-
-<p>
-Mi amor,
-</p>
-
-<p>
-Desde que llegaste a mi vida, todo comenzó a verse diferente.
-No importa cuántas veces piense en ello, sigo sintiendo la misma emoción que sentí cuando te vi por primera vez.
-</p>
-
-<p>
-Lo primero que me enamoró de ti fue tu personalidad.
-Después llegó tu sonrisa, tu forma de ser y esa manera tan especial que tienes de hacer que todo sea mejor.
-</p>
-
-<p>
-Si tuviera que elegir un momento favorito entre todos los que hemos vivido, siempre volvería al día en que te pedí que fueras mi enamorada.
-Ese momento quedó grabado para siempre en mi corazón.
-</p>
-
-<p>
-Admiro muchas cosas de ti.
-Tu inteligencia, tu belleza y todo lo que eres.
-Pero si hay algo que realmente me inspira, es la fortaleza que tienes para enfrentar cada desafío.
-</p>
-
-<p>
-Gracias por estos nueve meses.
-Gracias por cada abrazo, cada conversación y cada momento compartido.
-</p>
-
-<p>
-Mi promesa para ti es seguir construyendo nuestro futuro juntos.
-Formar una familia, cumplir nuestros sueños y conseguir todo aquello que deseamos, siempre de la mano.
-</p>
-
-<p>
-Te amo infinitamente.
-</p>
-
-<p>
-Con amor,
-<br>
-Juan Camilo ❤️
-</p>
-
+<h2>💌 Para ti</h2>
+<p id="typedText"></p>
 </section>
 
-<section class="final">
-
-<button onclick="showFinalMessage()">
-❤️ Ábreme ❤️
-</button>
-
+<section>
+<button onclick="showFinal()">❤️ Una última sorpresa ❤️</button>
 <div id="finalMessage"></div>
-
 </section>
 
+<button id="musicBtn">🎵 Cinnamon Girl</button>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
