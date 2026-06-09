@@ -132,3 +132,7 @@ window.open(
 );
 
 };
+
+document.getElementById("playMusic").addEventListener("click", () => {
+    document.getElementById("bgMusic").play();
+});
