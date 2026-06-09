@@ -132,7 +132,24 @@ window.open(
 );
 
 };
+document.getElementById("musicBtn").onclick = () => {
 
-document.getElementById("playMusic").addEventListener("click", () => {
-    document.getElementById("bgMusic").play();
-});
+    const music = document.getElementById("bgMusic");
+
+    if (music.paused) {
+
+        music.play();
+
+        document.getElementById("musicBtn").innerText =
+        "⏸️ Pausar música";
+
+    } else {
+
+        music.pause();
+
+        document.getElementById("musicBtn").innerText =
+        "🎵 Cinnamon Girl";
+
+    }
+
+};
